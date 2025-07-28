@@ -1,0 +1,345 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.5s ease;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="32" width="32"><circle cx="16" cy="16" r="8" fill="white"/></svg>') 16 16, auto;
+  background: linear-gradient(270deg, #2c003e, #6a0572, #ff416c, #ff4b2b, #2c003e);
+  background-size: 1200% 1200%;
+  animation: gradientAnimation 30s ease infinite;
+  position: relative;
+}
+
+h1, h2, h3 {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-section {
+  text-align: center;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  box-shadow: 0 0 20px rgba(255, 75, 43, 0.6);
+}
+
+.hero-section h1 {
+  font-size: 4rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  color: #ffe6e1;
+}
+
+.skills-visualization img,
+.project-showcase img,
+.project-showcase video {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.project-showcase .projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem;
+  width: 400px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 75, 43, 0.7);
+  outline: none;
+}
+
+.project-details h3 {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.project-details p {
+  margin-top: 0.5rem;
+  color: #ffd6cc;
+  font-size: 1rem;
+}
+
+.testimonials {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(255, 75, 43, 0.5);
+}
+
+.testimonials blockquote {
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.testimonials blockquote::before {
+  content: "“";
+  font-size: 3rem;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  color: #ff4b2b;
+}
+
+.testimonials footer {
+  text-align: right;
+  font-weight: 700;
+  color: #ffb3a7;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(255, 75, 43, 0.5);
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background: #ff4b2b;
+  color: #fff;
+  font-weight: 900;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover,
+.contact-form button:focus {
+  background: #ff416c;
+  outline: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-showcase .projects-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  .bilingual-skills-container {
+    flex-direction: column;
+  }
+}
+
+/* Programs list styles */
+.programs-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.programs-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.program-icon {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Skills Visualization bilingual container */
+.bilingual-skills-container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Arabic and English skill blocks */
+.skills-arabic,
+.skills-english {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 45%;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skills-arabic h3,
+.skills-english h3 {
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #ff4b2b;
+}
+
+/* Right-to-left direction for Arabic block */
+.skills-arabic {
+  direction: rtl;
+  text-align: right;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.15), transparent 50%),
+    radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.1), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.12), transparent 45%),
+    radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1), transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+  animation: shapesMove 40s linear infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes shapesMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, 10px) rotate(180deg);
+  }
+  100% {
+    transform: translate(20px, 20px) rotate(360deg);
+  }
+}
+
+.section.my-concepts {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  margin-top: 2rem;
+}
+
+.section.my-concepts h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.section.my-concepts .concepts-content {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.section.my-concepts .concepts-content > p,
+.section.my-concepts .concept-development,
+.section.my-concepts .submitting-results {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Different background colors for each box */
+.section.my-concepts .concepts-content > p {
+  background-color: #6a0572; /* Purple */
+}
+
+.section.my-concepts .concept-development {
+  background-color: #ff416c; /* Pinkish red */
+}
+
+.section.my-concepts .submitting-results {
+  background-color: #ff4b2b; /* Orange red */
+}
